@@ -18,6 +18,10 @@ namespace PadawansTask13
 
         public Employee(string surname, int age)
         {
+            if (surname == null)
+                throw new ArgumentNullException();
+            if (surname == "" || age <= 0)
+                throw new ArgumentException();
             this.surname = surname;
             this.age = age;
         }
@@ -29,6 +33,10 @@ namespace PadawansTask13
 
         public void SetSurname(string surname)
         {
+            if (surname == null)
+                throw new ArgumentNullException();
+            if (surname == "")
+                throw new ArgumentException();
             this.surname = surname;
         }
 
